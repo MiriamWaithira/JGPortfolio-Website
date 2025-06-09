@@ -566,8 +566,13 @@ main {
 /* Ionicons Base Styles */
 .social-item ion-icon {
   font-size: 1.5rem; /* Base size */
+  width: 1.5rem;
+  height: 1.5rem;
   color: var(--light-gray-70);
   transition: var(--transition-1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .social-item ion-icon:hover {
@@ -577,21 +582,21 @@ main {
 
 /* Twitter/X icon specific styles */
 .social-item ion-icon[name="logo-twitter"] {
-  background-color: #000;
-  color: #fff !important;
-  padding: 0.25em;
-  border-radius: 3px;
-  width: 1.25em;
-  height: 1.25em;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  background-color: transparent !important; /* Remove black bg */
+  color: var(--light-gray-70) !important; /* Use same color as others */
+  padding: 0 !important; /* Remove extra padding */
+  border-radius: 0 !important; /* Remove rounding */
+  width: 1.5rem !important; /* Standard size */
+  height: 1.5rem !important;
 }
 
 /* WhatsApp icon specific styles */
 .social-item ion-icon[name="logo-whatsapp"] {
   color: #25D366 !important;
 }
+
+/* Twitter icon specific styles - Black on hover */
+.social-item ion-icon[name="logo-twitter"]:hover { color: #000 !important; }
 
 /* LinkedIn icon specific styles */
 .social-item ion-icon[name="logo-linkedin"] {
