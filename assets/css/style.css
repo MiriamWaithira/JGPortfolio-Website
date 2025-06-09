@@ -563,6 +563,54 @@ main {
 }
 
 
+/* Ionicons Base Styles */
+.social-item ion-icon {
+  font-size: 1.5rem; /* Base size */
+  color: var(--light-gray-70);
+  transition: var(--transition-1);
+}
+
+.social-item ion-icon:hover {
+  color: var(--light-gray);
+  transform: translateY(-3px);
+}
+
+/* Twitter/X icon specific styles */
+.social-item ion-icon[name="logo-twitter"] {
+  background-color: #000;
+  color: #fff !important;
+  padding: 0.25em;
+  border-radius: 3px;
+  width: 1.25em;
+  height: 1.25em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* WhatsApp icon specific styles */
+.social-item ion-icon[name="logo-whatsapp"] {
+  color: #25D366 !important;
+}
+
+/* LinkedIn icon specific styles */
+.social-item ion-icon[name="logo-linkedin"] {
+  color: #0077B5 !important;
+}
+
+/* Email icon specific styles */
+.social-item ion-icon[name="mail-outline"] {
+  color: var(--orange-yellow-crayola) !important;
+}
+
+/* Hover effects for all icons */
+.social-item ion-icon[name="logo-whatsapp"]:hover,
+.social-item ion-icon[name="logo-linkedin"]:hover,
+.social-item ion-icon[name="mail-outline"]:hover {
+  opacity: 0.8;
+  transform: translateY(-3px) scale(1.1);
+}
+
 
 /* Removed testimonials and clients sections since not used */
 
@@ -1251,6 +1299,10 @@ textarea.form-input::-webkit-resizer { display: none; }
     /* KAMIRI */
   .service-content-box { text-align: left; }
 
+  .social-item ion-icon {
+    font-size: 1.75rem;
+  }
+
   /* Removed testimonials modal styles */
 
   /**
@@ -1373,6 +1425,10 @@ textarea.form-input::-webkit-resizer { display: none; }
     width: max-content;
     margin-left: auto;
   }
+
+  .social-item ion-icon {
+    font-size: 2rem;
+  }
 }
 
 /**
@@ -1455,6 +1511,10 @@ textarea.form-input::-webkit-resizer { display: none; }
    * BLOG
    */
   .blog-banner-box { height: 230px; }
+
+  .social-item ion-icon {
+    font-size: 1.5rem;
+  }
 }
 
 /**
