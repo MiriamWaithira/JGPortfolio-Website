@@ -1292,13 +1292,20 @@ textarea.form-input::-webkit-resizer { display: none; }
   /* KAMIRI */
 
   .service-icon-box .icon-box {
-    width: 56px;
-    height: 56px;
+    width: 64px;
+    height: 64px;
+    /* Flex centering ensures proper alignment */
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
   .service-icon {
-    width: 28px;
-    height: 28px;
+    /* Relative sizing based on container */
+  width: 60%;
+  height: 60%;
+  /* Maintain aspect ratio */
+  object-fit: contain;
   }
 
     /* KAMIRI */
@@ -1384,6 +1391,11 @@ textarea.form-input::-webkit-resizer { display: none; }
   .service-list {
     grid-template-columns: 1fr 1fr;
     gap: 20px 25px;
+  }
+
+  .service-icon {
+    width: 65%;
+    height: 65%;
   }
 
   /**
@@ -1499,6 +1511,11 @@ textarea.form-input::-webkit-resizer { display: none; }
   .service-list {
     grid-template-columns: 1fr 1fr;
     gap: 20px 25px;
+  }
+
+  .service-icon {
+    width: 70%;
+    height: 70%;
   }
 
   /**
