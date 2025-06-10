@@ -1322,6 +1322,101 @@ textarea.form-input::-webkit-resizer { display: none; }
     width: calc(100% - 64px);
   }
 
+  /* ==============================================
+   THEME TOGGLE BUTTON STYLES WITH IONICONS
+   ============================================== */
+
+  .theme-toggle-wrapper {
+    position: fixed;
+    top: 20px;
+    left: 20px; /* Positioned to the left of navbar */
+    z-index: 1000;
+  }
+
+  .theme-toggle {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--border-gradient-onyx);
+    color: var(--orange-yellow-crayola);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    position: relative;
+    box-shadow: var(--shadow-1);
+    z-index: 1;
+  }
+
+  .theme-toggle::before {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    background: var(--bg-gradient-jet);
+    border-radius: inherit;
+    z-index: -1;
+  }
+
+  .theme-toggle:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-2);
+  }
+
+  .theme-toggle:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(77, 171, 247, 0.5);
+  }
+
+  .theme-toggle ion-icon {
+    font-size: 20px;
+    position: absolute;
+    transition: all 0.3s ease;
+  }
+
+  /* Initial state - show moon icon */
+  .sun-icon {
+    opacity: 0;
+    transform: rotate(90deg);
+  }
+
+  .moon-icon {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+
+  /* Light mode state - show sun icon */
+  .light-mode .sun-icon {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+
+  .light-mode .moon-icon {
+    opacity: 0;
+    transform: rotate(-90deg);
+  }
+
+  /* Adjust for navbar positioning */
+  .navbar {
+    left: 74px; /* Make space for the toggle button */
+  }
+
+  /* Add this to your CSS for a nice toggle animation */
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .animate-toggle .sun-icon {
+    animation: spin 0.5s ease;
+  }
+
+  .animate-toggle .moon-icon {
+    animation: spin 0.5s ease reverse;
+  }
+
+
   /**
    * #NAVBAR
    */

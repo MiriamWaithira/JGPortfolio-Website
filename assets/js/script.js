@@ -177,3 +177,38 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
   });
 });
+
+
+// ==============================================
+// THEME TOGGLE FUNCTIONALITY
+// ==============================================
+document.addEventListener('DOMContentLoaded', function() {
+  const themeToggle = document.getElementById('themeToggle');
+  const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+  
+  // Check for saved user preference or use system preference
+  const currentTheme = localStorage.getItem('theme') || 
+                      (prefersDarkScheme.matches ? 'dark' : 'light');
+  
+  // Apply the initial theme
+  if (currentTheme === 'light') {
+    document.body.classList.add('light-mode');
+  }
+  
+  // Toggle theme on button click
+  themeToggle.addEventListener('click', function() {
+    const isLight = document.body.classList.toggle('light-mode');
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    
+    // Add animation class for fun effect
+    this.classList.add('animate-toggle');
+    setTimeout(() => this.classList.remove('animate-toggle'), 300);
+  });
+  
+  // Listen for system theme changes
+  prefersDarkScheme.addListener(e => {
+    if (!localStorage.getItem('theme')) {
+      document.body.classList.toggle('light-mode', !e.matches);
+    }
+  });
+});
