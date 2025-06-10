@@ -509,7 +509,7 @@ main {
  .icon-box {
   width: 64px;
   height: 64px;
-  border-radius: 50%;
+  border-radius: 8px;
   position: relative;
   background-color: var(--orange-yellow-crayola);
   display: flex;
@@ -778,6 +778,66 @@ main {
   height: 100%;
   border-radius: inherit;
 }
+
+/* Skill item hover effects */
+.skills-item {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.skills-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.skills-item:hover .title-wrapper h5 {
+  color: var(--orange-yellow-crayola);
+}
+
+.skills-item:hover .skill-progress-fill {
+  animation: progressGrow 0.5s ease-out forwards;
+}
+
+.skills-item:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-gradient-yellow-2);
+  opacity: 0.1;
+  z-index: -1;
+}
+
+/* Animation for progress bar growth */
+@keyframes progressGrow {
+  0% {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+/* Enhanced title styles on hover */
+.title-wrapper h5 {
+  transition: color 0.3s ease;
+}
+
+/* Percentage value animation */
+.skills-item:hover .title-wrapper data {
+  animation: progressGrow 0.5s ease;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
 
 /* CV Download Button */
 .download-btn-wrapper {
@@ -1292,8 +1352,8 @@ textarea.form-input::-webkit-resizer { display: none; }
   /* KAMIRI */
 
   .service-icon-box .icon-box {
-    width: 64px;
-    height: 64px;
+    width: 56px;
+    height: 56px;
     /* Flex centering ensures proper alignment */
     display: flex;
     justify-content: center;
@@ -1329,6 +1389,46 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 
   .skills-item:not(:last-child) { margin-bottom: 25px; }
+
+
+  /* Hover and focus states */
+.service-icon-box .icon-box:hover ion-icon,
+.timeline .icon-box:hover ion-icon {
+  transform: scale(1.1);
+  color: var(--vegas-gold);
+}
+
+/* Active state */
+.service-icon-box .icon-box:active ion-icon,
+.timeline .icon-box:active ion-icon {
+  transform: scale(0.95);
+}
+
+/* Focus-visible for keyboard navigation */
+.service-icon-box .icon-box:focus-visible,
+.timeline .icon-box:focus-visible {
+  outline: 2px solid var(--orange-yellow-crayola);
+  outline-offset: 2px;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  ion-icon {
+    transition: none;
+  }
+  
+  .service-icon-box .icon-box:hover ion-icon,
+  .timeline .icon-box:hover ion-icon {
+    transform: none;
+  }
+}
+
+/* Timeline icon box specific styles */
+.timeline .icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px; /* Changed from any circular value */
+}
 
   /**
    * #PORTFOLIO, BLOG
@@ -1396,6 +1496,16 @@ textarea.form-input::-webkit-resizer { display: none; }
   .service-icon {
     width: 65%;
     height: 65%;
+  }
+
+  /* skills */
+  .skills-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .skills-item:hover .skill-progress-fill {
+    animation: progressGrow 0.5s ease-out forwards;
   }
 
   /**
@@ -1516,6 +1626,16 @@ textarea.form-input::-webkit-resizer { display: none; }
   .service-icon {
     width: 70%;
     height: 70%;
+  }
+
+  .service-icon-box .icon-box {
+    width: 60px;
+    height: 60px;
+  }
+
+  .timeline .icon-box {
+    width: 48px;
+    height: 48px;
   }
 
   /**
