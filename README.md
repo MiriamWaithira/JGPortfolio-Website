@@ -1,6 +1,7 @@
 # Joram Gichane - Industrial Automation Engineer Portfolio
 
-![Website Screenshot](./assets/images/screenshot1.jpg) <!-- Add a screenshot if available -->
+![Website Screenshot]([./assets/images/screenshot1.jpg](https://github.com/MiriamWaithira/JGPortfolio-Website/blob/26fb9158830cd79f081368ecec013a7be1a3bcbb/assets/images/screenshot1.JPG)) <!-- Add a screenshot if available -->
+
 ![Website Screenshot](./assets/images/screenshot2.jpg) <!-- Add a screenshot if available -->
 
 Live Website: [https://jg-portfolio-website.vercel.app/](https://jg-portfolio-website.vercel.app/)
